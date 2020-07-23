@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import axios from "axios";
 import Modal from 'react-awesome-modal';
 import './Showdata.css';
-import {ip,port} from "../setIP/setting";
+import {ip,port,linkurl} from "../setIP/setting";
 
 export default class Showdata extends Component{
     constructor() {
@@ -26,7 +26,7 @@ export default class Showdata extends Component{
     }
 
     onDelete=(user)=>{
-        let url = `http://${ip}:${port}/delete`;
+        let url = `${linkurl}/delete`;
         let data = {
             idkey:user.id
         }
@@ -57,7 +57,7 @@ export default class Showdata extends Component{
         this.setState({
             [e.target.id]: e.target.value
         });
-        let url = `http://${ip}:${port}/data`;
+        let url = `${linkurl}/data`;
         let data = {
             idkey:this.state.idkey,
             firstname:this.state.firstname,
@@ -67,7 +67,7 @@ export default class Showdata extends Component{
     }
 
     handleClicked(){
-        let url = `http://${ip}:${port}/data`;
+        let url = `${linkurl}/data`;
         let data = {
             idkey:this.state.idkey,
             firstname:this.state.firstname,

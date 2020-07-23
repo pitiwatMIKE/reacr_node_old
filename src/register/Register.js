@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import axios from "axios";
-import {ip,port} from "../setIP/setting";
+import {ip,port,linkurl} from "../setIP/setting";
 
 export default class Register extends Component{
     constructor() {
@@ -19,7 +19,8 @@ export default class Register extends Component{
         });
     }
     handleClicked(){
-        let url = `http://${ip}:${port}/data`;
+        //let url = `http://${ip}:${port}/data`;
+        let url = `${linkurl}/data`;
         let data = {
             idkey:this.state.idkey,
             firstname:this.state.firstname,
